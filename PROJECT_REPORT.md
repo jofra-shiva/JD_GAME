@@ -1,6 +1,6 @@
 # Project Report: JD Quest Quiz Engine
 **Subject:** Advanced Java Programming
-**Submitted by:** [Your Name]
+**Submitted by:** SIVAPRAKASH M
 **Project Name:** JD_GAME_Maven_Project
 
 ## 1. About the Project

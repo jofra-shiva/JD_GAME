@@ -33,5 +33,5 @@ Hi, this is my Advanced Java Programming project for Semester 1 at Nehru MCA. I'
 2. Check `Config.java` to make sure the database username and password match your local PC settings.
 3. Run the `Main.java` file.
 
-**Author:** [Your Name]
-**College:** Nehru MCA
+**Author:** SIVAPRAKASH M
+**College:** NIITM MCA

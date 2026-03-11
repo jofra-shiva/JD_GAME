@@ -1,80 +1,37 @@
-# JD Quest: Level-Based Quiz Adventure 🎮
-*Advanced Java Programming - Semester 1 Project*
+# JD Quest - My Semester 1 Java Project 🎮
 
-## 📌 Project Overview
-**JD Quest** is a robust, interactive quiz game developed as part of the MCA Semester 1 "Advanced Java Programming" curriculum. The project demonstrates the integration of **Java Swing** for GUI development and **MySQL** for persistent data management.
+Hi, this is my Advanced Java Programming project for Semester 1 at Nehru MCA. I've named it **JD Quest**. It's a level-based quiz game that uses Java Swing for the design and MySQL to save user data.
 
-The game challenges users with level-based questions, tracks progress through high scores, and provides a persistent experience by saving game states directly to a centralized database.
+## What it does
+- **Login:** Users can log in to keep track of their scores.
+- **Levels:** There are 15 levels. As you clear one, you move to the next.
+- **Save Progress:** The game saves your high score and which level you reached so you don't lose progress.
+- **Performance Logs:** It even tracks how much time you take for each question.
+- **Easy Config:** I've put settings like JDBC URL and number of levels in one file so I can change them easily.
 
----
+## Tech Used
+- **Language:** Java 17
+- **Tools:** Maven (for managing JAR files like the MySQL connector)
+- **GUI:** Swing
+- **Database:** MySQL
+- **Data storage:** Using JSON to save some of the user states.
 
-## 🚀 Key Features
-- **User Authentication:** Secure login system allowing users to track their individual progress.
-- **Level-Based Progression:** 15 distinct levels of increasing difficulty.
-- **Dynamic Question Engine:** Fetches multiple-choice questions (MCQs) from the database in real-time.
-- **Progress Persistence:** Automatically saves high scores and current level indices.
-- **Gameplay Analytics:** Logs setiap attempt (ms spent, correctness) for performance tracking.
-- **Custom Configuration:** Easily adjustable game settings (No. of levels, questions per level) via a central configuration utility.
+## How the code is organized
+- `com.jdgame.db`: Has all the SQL connection and query code.
+- `com.jdgame.model`: Simple classes for User and Question data.
+- `com.jdgame.ui`: Where the screens are designed.
+- `com.jdgame.util`: Just a simple config file for DB settings.
+- `sql/`: The schema file I used to create my tables.
 
----
+## Database Tables
+- `users`: Stores who is playing and their top scores.
+- `questions`: The bank of questions for each level.
+- `gameplay_logs`: This is for tracking if answers were correct and the time taken.
 
-## 🛠️ Technology Stack
-- **Language:** Java 17+
-- **Framework:** Maven (Dependency & Build Management)
-- **GUI:** Java Swing (Desktop Interface)
-- **Database:** MySQL 8.0
-- **Driver:** MySQL Connector/J
-- **Data Format:** JSON (for complex state storage)
+## How to setup
+1. Open MySQL and run everything inside `sql/schema.sql`.
+2. Check `Config.java` to make sure the database username and password match your local PC settings.
+3. Run the `Main.java` file.
 
----
-
-## 📂 Project Structure & Analysis
-The project follows a modular architecture to ensure separation of concerns:
-
-- **`com.jdgame.db`**: Handles all JDBC operations, connection pooling, and SQL execution.
-- **`com.jdgame.model`**: Contains Data Access Objects (DAOs) for `User` and `Question` entities.
-- **`com.jdgame.ui`**: (Work-in-progress) Manages the Swing-based graphical user interface.
-- **`com.jdgame.util`**: Centralized configuration and helper utilities.
-- **`sql/`**: Contains the database schema and initialization scripts.
-
----
-
-## 💾 Database Design
-The backend is powered by a relational schema optimized for speed and logging:
-- **`users`**: Stores credentials, high scores, and a JSON blob of the last saved state.
-- **`questions`**: A repository of MCQs categorized by level index.
-- **`gameplay_logs`**: Tracks user performance metrics for every question answered.
-
----
-
-## 🔧 Setup & Installation
-
-### Prerequisites
-- JDK 17
-- Apache Maven
-- MySQL Server
-
-### Database Setup
-1. Execute the provided SQL script:
-   ```bash
-   mysql -u root -p < sql/schema.sql
-   ```
-2. Configure credentials in `com.jdgame.util.Config.java`.
-
-### Build & Run
-```bash
-mvn clean install
-mvn exec:java -Dexec.mainClass="com.jdgame.Main"
-```
-
----
-
-## 📈 Future Roadmap
-- [ ] Complete the UI implementation with custom themes.
-- [ ] Add timer-based challenges for difficulty spikes.
-- [ ] Implement a Global Leaderboard feature.
-- [ ] Add sound effects and animations using Java AWT/Swing timers.
-
----
-**Developed by:** [Your Name]
-**Institutional Context:** Nehru MCA - SEM 1 Project
+**Author:** [Your Name]
+**College:** Nehru MCA
